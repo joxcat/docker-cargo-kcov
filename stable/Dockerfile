@@ -6,8 +6,6 @@ RUN apt install -y curl gcc cmake
 
 RUN curl -sSf https://sh.rustup.rs | sh -s -- -y --default-toolchain=stable
 
-RUN . $HOME/.cargo/env
+RUN $HOME/.cargo/bin/cargo install cargo-kcov
 
-RUN cargo install cargo-kcov
-
-CMD ["/bin/sh"]
+CMD ["/bin/bash"]

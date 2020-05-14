@@ -15,6 +15,7 @@ steps:
       tags:
         - latest
         - stable
+      purge: false
   - name: build-nightly
     image: plugins/docker
     settings:
@@ -26,3 +27,4 @@ steps:
         from_secret: docker_password
       tags:
         - nightly
+      purge: true
